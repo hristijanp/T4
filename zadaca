@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp18
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> povtoruvanje = new List<string> { "banana", "jabolko", "krusa", "banana", "portokal", "portokal", "portokal", "ananas", "ananas" };
+
+            SortedList<string, int> sortirataLista = new SortedList<string, int>();
+            for(int i = 0; i < povtoruvanje.Count; i++)
+            {
+                if(!sortirataLista.ContainsKey(povtoruvanje[i]))
+                {
+                    sortirataLista[povtoruvanje[i]] = 1;
+                } else
+                {
+                    sortirataLista[povtoruvanje[i]]++;
+                }
+            }
+            for(int i = 0; i < sortirataLista.Count; i++)
+            {
+                Console.WriteLine("Ovosje: {0}, Povtoruvanja: {1}", sortirataLista.Keys[i], sortirataLista.Values[i]);
+            }
+        }
+    }
+}
